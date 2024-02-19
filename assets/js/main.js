@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function generatePassword() {
-  var length = 12; // Password length
+  var length = 16; // Password length
   var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"; // Characters to include in the password
   var password = "";
   
