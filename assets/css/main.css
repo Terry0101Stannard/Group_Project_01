@@ -758,21 +758,21 @@ section {
 # Services Section
 --------------------------------------------------------------*/
 .services .card {
-  border: 1px solid rgba(14, 29, 52, 0.15);
+  border: 0.5px solid rgba(0, 0, 0, 0.411);
   background: #fff;
   position: relative;
-  border-radius: 0;
+  border-radius: 13px;
   height: 100%;
 }
 
 .services .card .card-img {
   overflow: hidden;
-  margin-bottom: 15px;
-  border-radius: 0;
+  margin-bottom: 10px;
+  border-radius: 13px 13px 0px 0px;
 }
 
 .services .card .card-img img {
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .services .card h3 {
