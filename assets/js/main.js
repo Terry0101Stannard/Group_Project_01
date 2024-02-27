@@ -150,3 +150,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+function generatePassword() {
+  var length = 16; // Password length
+  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"; // Characters to include in the password
+  var password = "";
+  
+  for (var i = 0; i < length; i++) {
+      var randomIndex = Math.floor(Math.random() * charset.length);
+      password += charset[randomIndex];
+  }
+  
+  document.getElementById("password").value = password;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var popup = document.getElementById('popup');
+  var countdownElement = document.getElementById('countdown');
+  var clickCountElement = document.getElementById('clickCount');
+  var clickCount = 0;
+
+  // Countdown timer
+  var countdownDate = new Date();
+  countdownDate.setDate(countdownDate.getDate() + 5); // Set countdown to 5 days from now
+
+  var countdownInterval = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+    
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      popup.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+  }, 1000);
+
+  // Lock browser
+  popup.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+
+  // Handle click events
+  document.addEventListener('keydown', function (event) {
+    if (event.code === 'Space') {
+      clickCount++;
+      clickCountElement.textContent = clickCount;
+      if (clickCount >= 5) {
+        clearInterval(countdownInterval);
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+      }
+    }
+  });
+});
