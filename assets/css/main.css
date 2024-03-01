@@ -1704,21 +1704,38 @@ section {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
+  position: relative;
   width: 100%;
   min-height: 50vh;
   background-color: var(--color-secondary);
-  background-image: url("../img/hero-bg.jpg");
+  background-image: url("../img/wp8869366.jpg");
   background-size: cover;
   background-position: center;
-  z-index: -2; /* Ensure background image is behind the overlay */
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.753); /* Adjust the color and opacity of the overlay */
+  z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+
+
 .hero h2 {
-  margin-bottom: 20px;
-  padding: 0;
-  font-size: 48px;
-  font-weight: 700;
-  color: #fff;
+  margin-bottom: 60px;
+  padding: 50;
+  font-size: 76px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 5px;
+
+  z-index: 1;
+
 }
 
 @media (max-width: 575px) {
@@ -1728,13 +1745,15 @@ section {
 }
 
 .hero p {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 200;
   margin-bottom: 40px;
+  color: #ffffff;
+  z-index: 1;
 }
 
 .hero form {
-  background: #fff;
+  background: #fffefe;
   padding: 10px;
   border-radius: 10px;
 }
@@ -1986,6 +2005,3 @@ button {
   cursor: pointer;
 }
 
-#banner { background: url(https://i.ibb.co/3SNpSdc/IMG-1489.jpg) no-repeat fixed 100% 100%; background-size: cover; color: #fff; height: 100%; width: 100%; }
-
-#bannertext { width: 24em; position: fixed; top: 20%; left: 50%; border: .5em solid #fff; margin-left: -12em; padding: 2em 0; }
