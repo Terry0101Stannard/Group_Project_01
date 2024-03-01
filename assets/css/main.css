@@ -1986,3 +1986,6 @@ button {
   cursor: pointer;
 }
 
+#banner { background: url(https://i.ibb.co/3SNpSdc/IMG-1489.jpg) no-repeat fixed 100% 100%; background-size: cover; color: #fff; height: 100%; width: 100%; }
+
+#bannertext { width: 24em; position: fixed; top: 20%; left: 50%; border: .5em solid #fff; margin-left: -12em; padding: 2em 0; }
