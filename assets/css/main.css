@@ -861,6 +861,7 @@ section {
 @media (max-width: 640px) {
   .features .features-item+.features-item {
     margin-top: 40px;
+    border-radius: 16px;
   }
 }
 
